@@ -3,21 +3,20 @@ from django.shortcuts import render
 from .models import Patient, Event, Donor, SupportGroup, Research, NewsletterSubscription
 
 def home(request):
-    # Fetch data from models
+    return render(request, 'yes2kids/index.html')
+
+def about(request):
+    return render(request, 'yes2kids/about.html')
+
+def services(request):
+    # Fetch data from the 'Patient' model (or use any other model you prefer)
     patients = Patient.objects.all()
+    return render(request, 'yes2kids/services.html', {'patients': patients})
+
+def events(request):
+    # Fetch data from the 'Event' model
     events = Event.objects.all()
-    donors = Donor.objects.all()
-    support_groups = SupportGroup.objects.all()
-    research_items = Research.objects.all()
-    subscriptions = NewsletterSubscription.objects.all()
+    return render(request, 'yes2kids/events.html', {'events': events})
 
-    context = {
-        'patients': patients,
-        'events': events,
-        'donors': donors,
-        'support_groups': support_groups,
-        'research_items': research_items,
-        'subscriptions': subscriptions,
-    }
-
-    return render(request, 'yes2kids/index.html', context)
+def contact(request):
+    return render(request, 'yes2kids/contact.html')

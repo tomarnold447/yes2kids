@@ -1,9 +1,11 @@
-# yes2kids/urls.py
-
+# urls.py
 from django.urls import path
-from .views import home
+from .views import home, about, services, events, contact
 
 urlpatterns = [
     path('', home, name='home'),
-    # Add other URL patterns as needed
+    path('about/', about, name='about'),
+    path('services/', services, name='services'),
+    path('events/', events, name='events'),
+    path('contact/', contact, name='contact'),
 ]

@@ -1,13 +1,21 @@
 /* static/yes2kids/styles.css */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+    min-height: 100vh; /* Ensure the body takes at least the full viewport height */
+    display: flex;
+    flex-direction: column;
 }
 
 header {
-    background-color: #005073;
+    background-color: #c8102e; /* Kenya Airways header red shade */
     color: #fff;
     padding: 20px;
     text-align: center;
@@ -18,21 +26,70 @@ h1 {
     font-size: 2em;
 }
 
-p {
-    margin: 0;
-    color: #333;
+nav {
+    background-color: #c8102e; /* Kenya Airways header red shade */
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #ddd;
 }
 
 section {
-    padding: 20px;
+    padding: 40px 20px;
+    flex: 1; /* Allow the section to take remaining space */
+}
+
+section h2 {
+    color: #c8102e; /* Kenya Airways header red shade */
 }
 
 footer {
-    background-color: #333;
+    background-color: #333; /* Dark grey color */
     color: #fff;
-    padding: 10px;
+    padding: 20px;
     text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    margin-top: auto; /* Push the footer to the bottom */
+}
+
+.footer-icon {
+    font-size: 1.5em;
+    color: #fff;
+    margin: 0 10px;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 600px) {
+    header, nav, section, footer {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        font-size: 0.8em;
+        margin: 10px 0;
+    }
+
+    .footer-icon {
+        font-size: 1em;
+    }
 }
