@@ -1,0 +1,175 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yes 2 Kids - Home</title>
+
+    <!-- Link to Tailwind CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <!-- Link to FontAwesome (replace with your own icons if needed) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Link to your custom CSS file -->
+    <link rel="stylesheet" href="{% static 'yes2kids/styles.css' %}">
+</head>
+
+<body class="font-sans min-h-screen flex flex-col">
+
+    <!-- Header Section -->
+    <header id="mainHeader" class="bg-transparent sticky top-0 z-[9999999] py-5 md:py-6">
+        <div class="container mx-auto flex items-center justify-between">
+            <img src="{% static 'yes2kids/images/Y2K-Logo-Final-F1.svg' %}" alt="Yes 2 Kids Logo"
+                class="h-auto w-32 md:h-16 md:w-auto loading-lazy hidden md:block"
+                async data-nimg="1" style="color: red; max-width: 100%; height: auto;">
+
+            <nav class="hidden md:flex items-center space-x-4">
+                <a href="index.html" class="btn-header">Home</a>
+                <a href="about.html" class="btn-header">About Us</a>
+
+                <div class="relative group">
+                    <button id="servicesBtn" class="btn-header">
+                        Our Services <i class="fas fa-chevron-down text-sm text-gray-600"></i>
+                    </button>
+
+                    <ul id="servicesDropdown"
+                        class="absolute hidden space-y-2 bg-white border border-gray-200 p-2 rounded-md mt-2">
+                        <li><a href="#" class="block btn-dropdown">Prevention</a></li>
+                        <li><a href="#" class="block btn-dropdown">Management</a></li>
+                        <li><a href="#" class="block btn-dropdown">Health Promotion</a></li>
+                    </ul>
+                </div>
+
+                <a href="events.html" class="btn-header">Events</a>
+                <a href="contact.html" class="btn-header">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+ <!-- Main Content Section without Photo -->
+<section id="mainContent" class="flex-1 relative flex items-center justify-center bg-[#22409a] text-white">
+    <div class="container mx-auto text-center">
+        <h2 class="text-4xl font-extrabold mb-4">Healthy Populations Across the Lifespan</h2>
+        <a href="{% url 'services' %}" class="btn-cta">Our Services</a>
+    </div>
+</section>
+
+
+
+    <!-- Footer Section -->
+    <footer class="bg-[#22409a] py-8 md:py-16">
+        <div class="container mx-auto flex flex-wrap justify-between">
+
+            <!-- Footer Links -->
+            <div class="w-full md:w-1/2 lg:w-1/4">
+                <h4 class="text-lg font-semibold mb-4 text-white">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-white hover:text-gray-200 btn-footer">Home</a></li>
+                    <li><a href="#" class="text-white hover:text-gray-200 btn-footer">About Us</a></li>
+                    <li><a href="#" class="text-white hover:text-gray-200 btn-footer">Our Services</a></li>
+                    <ul class="absolute hidden space-y-2 bg-white border border-gray-200 p-2 rounded-md">
+                        <li><a href="#" class="block btn-dropdown">Prevention</a></li>
+                        <li><a href="#" class="block btn-dropdown">Management</a></li>
+                        <li><a href="#" class="block btn-dropdown">Health Promotion</a></li>
+                    </ul>
+                    <li><a href="#" class="text-white hover:text-gray-200 btn-footer">Events</a></li>
+                    <li><a href="#" class="text-white hover:text-gray-200 btn-footer">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Media Icons -->
+            <div class="w-full md:w-1/2 lg:w-1/4 mt-8 md:mt-0">
+                <h4 class="text-lg font-semibold mb-4 text-white">Connect With Us</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-white hover:text-gray-200"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white hover:text-gray-200"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white hover:text-gray-200"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white hover:text-gray-200"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="w-full md:w-1/2 lg:w-1/4 mt-8 md:mt-0">
+                <h4 class="text-lg font-semibold mb-4 text-white">Contact Us</h4>
+                <p class="text-white">123 Main Street<br>City,
+                    Country<br>Email: info@example.com<br>Phone: +123 456 7890</p>
+            </div>
+        </div>
+
+        <!-- Copyright Notice -->
+        <div class="mt-16 text-center text-white">
+            <p>&copy; 2024 Yes 2 Kids. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Your other scripts go here -->
+
+    <!-- JavaScript for the dropdown on hover -->
+    <script>
+        var servicesDropdown = document.getElementById('servicesDropdown');
+        var servicesBtn = document.getElementById('servicesBtn');
+
+        servicesBtn.addEventListener('mouseenter', showDropdown);
+        servicesBtn.addEventListener('mouseleave', function (e) {
+            if (!isCursorOverElement(e, servicesDropdown) && !isCursorOverElement(e, servicesBtn)) {
+                hideDropdown();
+            }
+        });
+
+        servicesBtn.addEventListener('click', function (e) {
+            e.preventDefault(); // Prevent the default behavior of the button
+            toggleDropdown();
+        });
+
+        document.addEventListener('touchstart', function (e) {
+            if (!isCursorOverElement(e, servicesDropdown) && !isCursorOverElement(e, servicesBtn)) {
+                hideDropdown();
+            }
+        });
+
+        servicesBtn.addEventListener('touchstart', function (e) {
+            e.preventDefault();
+            toggleDropdown();
+        });
+
+        servicesDropdown.addEventListener('touchstart', function (e) {
+            e.stopPropagation(); // Prevent touchstart on dropdown from triggering document touchstart
+        });
+
+        servicesDropdown.addEventListener('mouseleave', hideDropdown);
+
+        function showDropdown() {
+            servicesDropdown.style.opacity = 1;
+            servicesDropdown.classList.remove('hidden');
+            servicesDropdown.style.zIndex = '999';
+        }
+
+        function hideDropdown() {
+            servicesDropdown.style.opacity = 0;
+            servicesDropdown.classList.add('hidden');
+        }
+
+        function toggleDropdown() {
+            if (servicesDropdown.classList.contains('hidden')) {
+                showDropdown();
+            } else {
+                hideDropdown();
+            }
+        }
+
+        function isCursorOverElement(event, element) {
+            var rect = element.getBoundingClientRect();
+            return (
+                event.clientX >= rect.left &&
+                event.clientX <= rect.right &&
+                event.clientY >= rect.top &&
+                event.clientY <= rect.bottom
+            );
+        }
+    </script>
+</body>
+
+</html>
