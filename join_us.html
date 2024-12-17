@@ -73,7 +73,8 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4">
-                                    <button type="submit" class="send-btn">Donate Now</button>
+                                    <a href="drive.html" class="btn header-btn">Donate Now</a>
+                                </div>
                                 </div>
                             </div>
                         </form>
@@ -83,3 +84,15 @@
         </div>
     </div>
     <!-- Request Back End -->
+    <script>
+        // Function to handle the click event of the "Donate Now" button
+        function donateNow() {
+            // Get the selected role
+            var selectedRole = document.getElementById('role').value;
+            
+            // Update the href attribute of the "Donate Now" button with the selected role as a URL parameter
+            var donateButton = document.getElementById('donate-now-btn');
+            donateButton.href = "onlinedrive.html?role=" + selectedRole;
+        }
+    </script>
+    

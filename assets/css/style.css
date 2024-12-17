@@ -147,10 +147,11 @@ h6 {
 p {
     font-family: "Poppins", sans-serif;
     color: #506172;
-    font-size: 16px;
+    font-size: 19px;
     line-height: 30px;
     margin-bottom: 15px;
     font-weight: normal;
+    text-align: left;
 }
 
 .bg-img-1 {
@@ -2063,28 +2064,28 @@ hr {
 }
 
 .section-padding2 {
-    padding-top: 200px;
-    padding-bottom: 200px;
+    padding-top: 75px;
+    padding-bottom: 75px;
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
     .section-padding2 {
-        padding-top: 200px;
+        padding-top: 75px;
         padding-bottom: 75px;
     }
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .section-padding2 {
-        padding-top: 200px;
-        padding-bottom: 200px;
+        padding-top: 75px;
+        padding-bottom: 75px;
     }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .section-padding2 {
-        padding-top: 100px;
-        padding-bottom: 100px;
+        padding-top: 75px;
+        padding-bottom: 75px;
     }
 }
 
@@ -2103,35 +2104,35 @@ hr {
 }
 
 .team-padding {
-    padding-top: 160px;
-    padding-bottom: 130px;
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
     .team-padding {
-        padding-top: 160px;
-        padding-bottom: 130px;
+        padding-top: 60px;
+        padding-bottom: 60px;
     }
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .team-padding {
-        padding-top: 110px;
-        padding-bottom: 80px;
+        padding-top: 60px;
+        padding-bottom: 60px;
     }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .team-padding {
-        padding-top: 100px;
-        padding-bottom: 80px;
+        padding-top: 60px;
+        padding-bottom: 60px;
     }
 }
 
 @media (max-width: 767px) {
     .team-padding {
-        padding-top: 200px;
-        padding-bottom: 100px;
+        padding-top: 60px;
+        padding-bottom: 60px;
     }
 }
 
@@ -2180,6 +2181,35 @@ hr {
     padding-bottom: 50px;
 }
 
+/* CSS for Our Partners Section */
+.our-partners-area {
+    padding: 60px 0;
+}
+
+.our-partners-area .trusted-caption {
+    margin-bottom: 30px;
+}
+
+.single-partner {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.single-partner img {
+    max-width: 100%;
+    height: auto;
+    max-height: 180px; /* Adjust this value as needed for the desired image height */
+    object-fit: contain; /* Ensures the image fits within the specified dimensions */
+    margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+    .single-partner img {
+        max-height: 100px; /* Smaller images on mobile */
+    }
+}
+
+
 .cosmic-header {
     display: flex;
     justify-content: space-between; /* Pushes the heading to the left and the logo to the right */
@@ -2206,6 +2236,33 @@ hr {
     transition: transform 0.3s ease; /* Smooth transition for the scaling effect */
 }
 
+.partners-section {
+    display: flex; /* Use flexbox for horizontal alignment */
+    justify-content: center; /* Center items horizontally */
+    align-items: flex-start; /* Align items at the top */
+    padding: 20px; /* Add some padding around the section */
+}
+
+.who-logo {
+    text-align: center; /* Center content horizontally */
+    flex: 1; /* Equal flex distribution */
+    display: flex; /* Use flexbox for inner alignment */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.who-logo img {
+    width: 130px; /* Fixed width for the image */
+    height: 130px; /* Fixed height for the image */
+    object-fit: contain; /* Maintain aspect ratio and fit within the dimensions */
+    margin-bottom: 10px; /* Space between logo and description */
+}
+
+.who-logo p {
+    font-size: 18px; /* Font size for description */
+    color: #333; /* Text color */
+    text-align: center; /* Center the text horizontally */
+}
 
 
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
@@ -2757,6 +2814,7 @@ hr {
 }
 
 .header-area .slicknav_btn {
+    display: block;
     top: -31px;
 }
 
@@ -2766,6 +2824,7 @@ hr {
 }
 
 .slicknav_menu {
+    position: relative;
     background: transparent;
     margin-top: 5px !important;
 }
@@ -3262,6 +3321,7 @@ hr {
 
 .we-trusted-area .trusted-caption p {
     margin-bottom: 57px;
+    text-align: left;
 }
 
 .services-area .single-services {
@@ -3331,8 +3391,8 @@ hr {
 
 .services-area .single-services .services-caption p {
     line-height: 25px;
-    text-indent: 20px;
-    text-align: justify;
+    text-indent: 0;
+    text-align: left;
 }
 
 .services-area .single-services::before {
@@ -3447,6 +3507,7 @@ hr {
 .completed-cases .single-cases-info p {
     margin-bottom: 50px;
     padding-right: 36px;
+    font-weight: normal;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -3654,7 +3715,7 @@ a.active {
 
 .recent-area .single-recent-cap .recent-cap p {
     color: #58585a;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .single-recent-cap:hover .recent-img img {
